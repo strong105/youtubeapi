@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+            {% for item in objects %}
+                <tr>
+                    <td>{{ item.title }}</td>
+                    <td><img src="{{ item.image_url }}"></img></td>
+                    <td>{{ item.created_at }}</td>
+                </tr>
+            {% endfor %}
+    </table>
+</body>
+</html>

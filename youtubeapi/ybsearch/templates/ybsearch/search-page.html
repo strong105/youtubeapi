@@ -1,0 +1,18 @@
+ {% if not user.is_authenticated %}
+     <p>Please login to use search</p>
+     <form method="POST" action="login/">{% csrf_token %}
+         <input placeholder="username" title="username" type="text" name="username"><br>
+         <input placeholder="password" title="password" type="password" name="password"><br>
+         <input type="submit" title="Login" name="Login" value="Login">
+     </form>
+
+ {% else %}
+      <h1>Search on youtube</h1>
+    <form method="POST" action="" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Search</button>
+    </form>
+    <form method="POST" action="logout/" class="post-form">{% csrf_token %}
+        <button type="submit" class="save btn btn-default">Logout</button>
+    </form>
+ {% endif %}
